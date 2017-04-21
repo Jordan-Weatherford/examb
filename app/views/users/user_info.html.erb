@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Profile Info</title>
+    </head>
+    <body>
+        <p>Name: <%= @user.name %></p>
+        <p>Alias: <%= @user.alias %></p>
+        <p>Email: <%= @user.email %></p>
+
+        <p>Total number of Posts: <%= @user.ideas.count %></p>
+        <p>Total number of Likes: <%= @user.likes.count %></p>
+    </body>
+</html>

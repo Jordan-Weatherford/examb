@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Specific Idea Page</title>
+    </head>
+    <body>
+        <p><a href="/user/<%= @idea.user.id %>"><%= @idea.user.alias %></a> says:</p>
+        <%= @idea.content %>
+
+        <h4>People who liked this post:</h4>
+        <table>
+            <tr>
+                <th>Alias</th>
+                <th>Name</th>
+            </tr>
+            <% if @likers %>
+                <tr>
+                    <% @likers.each do |liker| %>
+                    <td><%= liker.user.alias %></td>
+                    <td><%= liker.user.name %></td>
+                    <% end %>
+                </tr>
+            <% end %>
+        </table>
+    </body>
+</html>
