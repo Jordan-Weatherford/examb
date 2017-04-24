@@ -1,7 +1,8 @@
 class IdeasController < ApplicationController
     def ideas
         @user = User.find(session[:user_id])
-        @ideas = Idea.all.sort{ |a,b| b.likes.count <=> a.likes.count }
+# changed line below this. check if site is broken!!!!
+        @ideas = Idea.all.sort.includes(:user, :likes){ |a,b| b.likes.count <=> a.likes.count }
         render 'all_ideas'
     end
 
